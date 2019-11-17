@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Learn{% endblock %}
+
+{% block css %}
+<!-- Custom styles for this template -->
+<link href="{{ url_for('static', filename='css/sign.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+<h1>Hello!</h1>
+
+<div>
+    This is a test.
+</div>
+
+{% endblock %}

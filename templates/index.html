@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}IsaLingua{% endblock %}
+
+{% block css %}
+<!-- Bootstrap theme -->
+<!-- <link href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" rel="stylesheet"> -->
+
+<!-- Custom styles for this template -->
+<!-- <link href="{{ url_for('static', filename='css/theme.css') }}" rel="stylesheet"> -->
+{% endblock %}
+
+{% block body %}
+<div class="container theme-showcase" role="main">
+
+    <div class="jumbotron">
+        <h1>IsaLingua</h1>
+    </div>
+    <div class="btn-toolbar" role="toolbar">
+        <button type="button" class="btn btn-dark" onclick=window.location.href="{{ url_for('main.about') }}">About</button>
+        <button type="button" class="btn btn-dark" onclick=window.location.href="{{ url_for('main.learn') }}">Learn</button>
+        <button type="button" class="btn btn-dark" onclick=window.location.href="{{ url_for('main.info') }}">Info</button>
+        <button type="button" class="btn btn-dark" onclick=window.location.href="{{ url_for('main.sign') }}">Comment</button>
+
+    </div>
+
+    {% for comment in comments %}
+    <div class="page-header">
+        <h1>{{ comment.name }}</h1>
+        <div>
+            {{ comment.email }}
+            <button>&#10007;</button>
+        </div>
+    </div>
+    <div class="well">
+        <p>{{ comment.comment_text }}</p>
+    </div>
+    {% endfor %}
+
+</div> <!-- /container -->
+{% endblock %}
